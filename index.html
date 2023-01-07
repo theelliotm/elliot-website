@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Elliot's Developer Site" />
+    <script
+      src="https://kit.fontawesome.com/7c99d65b69.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="./style.css" rel="stylesheet" />
+    <link rel="icon" href="./assets/favicon.ico" />
+
+    <!-- remove this during production -->
+    <!-- <link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="./assets/fontawesome/css/solid.css" rel="stylesheet" /> -->
+
+    <title>Elliot's Dev Site</title>
+  </head>
+  <body>
+    <noscript>
+      <p>Without JavaScript, the website is just a shell of its former self.</p>
+    </noscript>
+    <header>
+      <div class="socialcontainer">
+        <div>
+          <a
+            href="https://www.linkedin.com/in/elliotmichlin/"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://www.twitter.com/elliotmichlin/"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+        </div>
+        <div>
+          <a
+            href="mailto:elliot@michlin.dev"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="welcome">
+        <div class="welcometext">
+          <h1>Hey,</h1>
+          <h2>I'm Elliot!</h2>
+        </div>
+        <div
+          id="welcomeimage"
+          alt="Me in a suit standing on the steps of the University's front building."
+        ></div>
+      </div>
+      <div class="aboutme">
+        <p>
+          I’m a freshman engineering student at Texas A&M University aiming to
+          pursue a degree in Computer Science. I’ve been interested in
+          computer-related engineering fields for ages though, from my first
+          Visual Basic program to developing mods for computer games and
+          eventually programming massive autonomous robots. I've outlined a
+          couple of my projects below:
+        </p>
+      </div>
+      <hr class="seperator" />
+      <h1>My Projects</h1>
+      <div id="projects">
+        <div class="project">
+          <div>
+            <h3>Critical Networking Infrastructure Install</h3>
+            <p>
+              During my time as a 2022
+              <b>Fort Bend County IT Networking intern</b>, me and my fellow
+              interns worked on the installation of Cisco phones, configuration
+              of modern Cisco network switches, and wiring / troubleshooting hot
+              ethernet ports at the Emergency Operations Center (EOC). The EOC
+              is a brand-new always-online building for managing emergencies
+              taking place in the county, from hurricanes to winter weather
+              outages. During my time on the project, I learned an extensive
+              amount about
+              <b
+                >Cisco switch configuration, enterprise-level firewalls,
+                routers, ISPs, AV equipment setup / maintenance, and remote
+                management</b
+              >.
+            </p>
+          </div>
+          <div class="projectimage">
+            <img
+              alt="I wasn't sure if I was allowed to show images of the real server racks I worked on, so this is just a copyright free image I found online instead."
+              src="./assets/serverrack.png"
+            />
+          </div>
+        </div>
+        <div class="project">
+          <div>
+            <h3>Robotics Org Promotional <i>React</i>-Based Website</h3>
+            <p>
+              During my time as a member of the Dulles Robotics organization, a
+              <b><i>FIRST</i> Robotics participant</b>, I was responsible for
+              leading both robot programming and website development. As part of
+              the latter goal, I built, from the ground-up, a React-based
+              website that
+              <b>promotes our organization to potential sponsors</b>. This
+              website utilizes React to its fullest and incorporates a
+              self-hosted Express.js
+              <b>API to show blog posts and real-time competition results.</b>
+              By incorporating the API into chat application Discord, other
+              robotics leaders can add media, blog posts, and more with ease. I
+              continue to maintain and host the website/API even in 2023.
+              <br /><br />You can visit both the website and view the source
+              code below:
+            </p>
+            <a
+              href="https://dullesrobotics.com"
+              rel="noreferrer noopener"
+              target="_blank"
+              class="arrowlink arrowholder left small"
+            >
+              <div class="arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+              <div class="arrowtext">
+                <p>Visit Website 🖥️</p>
+              </div>
+            </a>
+            <a
+              href="https://github.com/DullesRobotics/DullesRoboticsWebsiteReact"
+              rel="noreferrer noopener"
+              target="_blank"
+              class="arrowlink arrowholder left small"
+            >
+              <div class="arrow">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div class="arrowtext">
+                <p>View Source Code</p>
+              </div>
+            </a>
+          </div>
+          <div class="projectimage">
+            <img
+              src="./assets/reactsite.png"
+              alt="An image of the announcements page of the Robotics website. It shows dynamic blog posts, social media embeds, and real-time competition results."
+            />
+          </div>
+        </div>
+        <div class="project">
+          <div>
+            <h3>Self-hosted Proxmox Server for Virtual Machines</h3>
+            <p>
+              Throughout quarantine I took up an interest in hosting my own
+              websites and projects online. In this, I discovered the Linux
+              distribution Proxmox, which
+              <b>hosts virtual machines and containers</b> on a dedicated
+              machine. Using an old machine of mine, I installed it and began by
+              hosting a self-coded website using NGINX, an
+              <b
+                >HTTP/proxy server on a custom domain over the Cloudflare SSL
+                layer</b
+              >. Overtime I’ve added more capabilities to it, including a
+              Database container, Website container (hosting this website among
+              other projects), API container (servicing the Robotics website), a
+              VPN for remote management, and several game servers. To this day,
+              this project is very much <b>still in development</b>.
+            </p>
+          </div>
+          <div class="projectimage">
+            <img
+              src="./assets/proxmox.png"
+              alt="An image of a screen on Proxmox showing a list of virtual machines / containers and how many system resources each is using."
+            />
+          </div>
+        </div>
+      </div>
+      <hr class="seperator" />
+      <h1>Contact Me</h1>
+      <p>
+        Request a copy of my resume or recommendations, or just email me here!
+      </p>
+      <a
+        href="mailto:elliot@michlin.dev"
+        rel="noreferrer noopener"
+        target="_blank"
+        class="arrowlink arrowholder left large"
+      >
+        <div class="arrow">
+          <i class="fa-solid fa-arrow-right"></i>
+          <!-- <p class="emoji">📫</p> -->
+        </div>
+        <div class="arrowtext">
+          <p>elliot@michlin.dev 📫</p>
+        </div>
+      </a>
+    </main>
+    <footer>
+      <p>©️ <span id="year"></span><noscript>2023-</noscript> Elliot Michlin</p>
+      <a href="./privacy.html" class="arrowlink arrowholder center small">
+        <div class="arrow">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <div class="arrowtext">
+          <p>Privacy 🔎</p>
+        </div>
+      </a>
+      <script type="text/javascript">
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>

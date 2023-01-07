@@ -1,0 +1,60 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+yarn.lock
+
+/src/styles/styles.css
+
+workspace.code-workspace
+
+/.yarn
+
+.pnp.*
+
+package-lock.json
+assets/slug cute.jpg
+assets/fontawesome/css/all.css
+assets/fontawesome/css/all.min.css
+assets/fontawesome/css/brands.css
+assets/fontawesome/css/brands.min.css
+assets/fontawesome/css/fontawesome.css
+assets/fontawesome/css/fontawesome.min.css
+assets/fontawesome/css/regular.css
+assets/fontawesome/css/regular.min.css
+assets/fontawesome/css/solid.css
+assets/fontawesome/css/solid.min.css
+assets/fontawesome/css/svg-with-js.css
+assets/fontawesome/css/svg-with-js.min.css
+assets/fontawesome/css/v4-font-face.css
+assets/fontawesome/css/v4-font-face.min.css
+assets/fontawesome/css/v4-shims.css
+assets/fontawesome/css/v4-shims.min.css
+assets/fontawesome/css/v5-font-face.css
+assets/fontawesome/css/v5-font-face.min.css
+assets/fontawesome/webfonts/fa-brands-400.ttf
+assets/fontawesome/webfonts/fa-brands-400.woff2
+assets/fontawesome/webfonts/fa-regular-400.ttf
+assets/fontawesome/webfonts/fa-regular-400.woff2
+assets/fontawesome/webfonts/fa-solid-900.ttf
+assets/fontawesome/webfonts/fa-solid-900.woff2
+assets/fontawesome/webfonts/fa-v4compatibility.ttf
+assets/fontawesome/webfonts/fa-v4compatibility.woff2
+*.otf

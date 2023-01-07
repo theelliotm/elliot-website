@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+@font-face {
+  font-family: Stabillo;
+  src: url("./assets/StabilloMedium.otf");
+}
+
+body {
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 18px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: white; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkcyan; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid white; /* creates padding around scroll thumb */
+}
+
+main {
+  margin: 2vh 10vw 5vh 10vw;
+  font-size: 100%;
+}
+
+h1,
+h2,
+p {
+  margin: 1vh;
+}
+
+main p,
+main i {
+  color: #073a4d;
+}
+
+h1 {
+  font-family: "Stabillo";
+  font-size: clamp(3rem, 5vw, 100rem);
+  color: darkcyan;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-family: "Bahnschrift", "Open Sans", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-weight: bold;
+  font-size: clamp(2rem, 2.5vw, 100rem);
+  color: #073a4d;
+}
+
+h3,
+h3 i {
+  margin: 3vh 0;
+  font-family: "Bahnschrift", "Open Sans", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-size: clamp(2rem, 2vw, 100rem);
+  color: #0b448f;
+}
+
+p,
+noscript {
+  font-family: "Bahnschrift", "Open Sans", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-size: clamp(1rem, 1.25vw, 100rem);
+}
+
+.welcome {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 0 5vw 0 5vw;
+}
+
+.welcome div h1 {
+  font-size: clamp(8rem, 12vw, 100rem);
+  letter-spacing: 5px;
+  margin: 0;
+  text-align: center;
+}
+
+.welcome div h2 {
+  font-size: clamp(3rem, 5vw, 100rem);
+  margin: 0;
+  text-align: center;
+}
+
+.welcometext {
+  margin: 0 0 1vh 0;
+}
+
+#welcomeimage {
+  background-image: url("./assets/me.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 40%;
+  border-radius: 10px;
+  margin: 0 0 1vh 0;
+}
+
+hr {
+  border: none;
+  margin: 5vh auto;
+  height: 0.75vh;
+  background-color: #073a4d;
+  border-radius: clamp(10px, 5vw, 100px);
+}
+
+footer {
+  margin: 10vh 2.5vw 0 2.5vw;
+  padding: 2.5vh 0 1.5vh 0;
+  height: 10vh;
+  background-color: #073a4d;
+  border-radius: 15px 15px 0 0;
+}
+
+footer p,
+footer a {
+  text-align: center;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  margin: 0px 2.5vw;
+  padding: clamp(1rem, 2vh, 100rem);
+  height: 6vh;
+  border-radius: 0 0 15px 15px;
+  background-color: rgba(79, 137, 138, 0.75);
+}
+
+header a {
+  color: #073a4d;
+}
+
+.socialcontainer div i {
+  color: white;
+  padding: clamp(1rem, 1.25vmax, 100rem) clamp(1rem, 1.25vmax, 100rem);
+  border-radius: 1500px;
+  background-color: #073a4d;
+  text-align: center;
+  font-size: clamp(1rem, 1.25vw, 100rem);
+  transition-duration: 250ms;
+}
+
+.aboutme {
+  margin-top: 1vh;
+}
+
+.socialcontainer div i:hover {
+  background-color: #0f6584;
+  transform: scale(1.1);
+}
+
+.socialcontainer {
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-auto-flow: column;
+  gap: clamp(1rem, 1.25vw, 100rem);
+}
+
+.arrowholder {
+  font-size: clamp(2rem, 1vw, 100rem);
+  display: grid;
+  align-content: center;
+  grid-auto-flow: column;
+  gap: clamp(0.5rem, 0.2vw, 100rem);
+}
+
+.arrowholder.large {
+  font-weight: bolder;
+  gap: clamp(0.5rem, 1.25vw, 100rem);
+}
+
+.arrowholder.left {
+  margin: 2vh 1vw;
+  justify-content: left;
+}
+
+.arrowholder.center {
+  justify-content: center;
+}
+
+.arrowholder .arrowtext,
+.arrowholder .arrow {
+  transition: ease all 250ms;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+.arrowholder.small .arrow {
+  font-size: clamp(1rem, 1vw, 100rem);
+}
+
+.arrowholder.large .arrow {
+  font-size: clamp(2rem, 1.5vw, 100rem);
+}
+
+.arrowholder.large:hover .arrowtext {
+  transform: translateX(4vh);
+}
+
+.arrowholder.small:hover .arrowtext {
+  transform: translateX(1vh);
+}
+
+.arrowholder.large:hover .arrow {
+  transform: translateX(2vh);
+}
+
+.arrowholder.small:hover .arrow {
+  transform: translateX(0.5vh);
+}
+
+.arrowlink:hover {
+  text-decoration: none;
+}
+
+.emoji {
+  font-size: clamp(1rem, 2vw, 100rem);
+}
+
+#projects {
+  margin: 0 0;
+}
+
+.project {
+  margin: 2vh 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 1.25vw, 100rem);
+}
+
+.project div h3 {
+  margin-top: 0;
+}
+
+.projectimage {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.projectimage img {
+  border-radius: 10px;
+  justify-content: center;
+  height: 35vh;
+  width: auto;
+  object-fit: contain;
+  margin: auto auto;
+}
+
+noscript p {
+  text-align: center;
+  padding: 1vh 2vw;
+  margin: 0;
+  background-color: darkcyan;
+  color: white;
+  border-radius: 0 0 15px 15px;
+}
+
+@media only screen and (min-width: 770px) {
+  #welcomeimage {
+    margin: 0 5vw;
+  }
+  .welcometext {
+    margin: 0 5vw 1vh 5vw;
+  }
+  .projectimage img {
+    height: auto;
+    width: 25vw;
+    max-height: 40vh;
+    object-fit: cover;
+  }
+  .project {
+    margin: 2vh 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  #projects {
+    margin: 0 2vw;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  main {
+    margin: 5vh 10vw;
+  }
+  .aboutme {
+    margin-top: 5vh;
+  }
+  .welcome {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  .welcometext {
+    margin-bottom: 3vh;
+  }
+  .welcome div h1,
+  .welcome div h2 {
+    text-align: left;
+  }
+}
