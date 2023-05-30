@@ -12,6 +12,13 @@
     <link href="./style.css" rel="stylesheet" />
     <link rel="icon" href="./assets/favicon.ico" />
 
+    <script>
+      fetch(`https://api.michlin.dev/core/v1/ping?time=${new Date().getTime()}`)
+        .then((res) => res.text())
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+    </script>
+
     <!-- remove this during production -->
     <!-- <link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
