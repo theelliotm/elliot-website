@@ -1,3 +1,26 @@
+:root {
+  --h1-scroll-color: darkcyan;
+  --header-color: rgba(79, 137, 138, 0.75);
+  --h3-color: #0b448f;
+  --p-h2-hr-color: #073a4d;
+  --social-button: #0f6584;
+  --social-hover: #0f6584;
+  --bg-color: #fff;
+  --footer-text: white;
+  --footer-color: #073a4d;
+}
+
+[data-theme="dark"] {
+  --h1-scroll-color: rgb(9, 153, 153);
+  --header-color: rgba(73, 140, 141, 0.75);
+  --h3-color: #1b7ea1;
+  --p-h2-hr-color: #fff;
+  --social-hover: #2c4f5c;
+  --social-button: #0f6584;
+  --bg-color: #182d35;
+  --footer-color: #2c4f5c;
+}
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
 @font-face {
@@ -7,6 +30,8 @@
 
 body {
   margin: 0;
+  background: var(--bg-color);
+  transition-duration: 500ms;
 }
 
 body::-webkit-scrollbar {
@@ -14,13 +39,13 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: white; /* color of the tracking area */
+  background: var(--bg-color); /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: darkcyan; /* color of the scroll thumb */
+  background-color: var(--h1-scroll-color); /* color of the scroll thumb */
   border-radius: 20px; /* roundness of the scroll thumb */
-  border: 3px solid white; /* creates padding around scroll thumb */
+  border: 3px solid var(--bg-color); /* creates padding around scroll thumb */
 }
 
 main {
@@ -28,7 +53,6 @@ main {
   font-size: 100%;
 }
 
-h1,
 h2,
 p {
   margin: 1vh;
@@ -36,13 +60,13 @@ p {
 
 main p,
 main i {
-  color: #073a4d;
+  color: var(--p-h2-hr-color);
 }
 
 h1 {
   font-family: "Stabillo";
   font-size: clamp(3rem, 5vw, 100rem);
-  color: darkcyan;
+  color: var(--h1-scroll-color);
   letter-spacing: 2px;
 }
 
@@ -51,7 +75,7 @@ h2 {
     sans-serif;
   font-weight: bold;
   font-size: clamp(2rem, 2.5vw, 100rem);
-  color: #073a4d;
+  color: var(--p-h2-hr-color);
 }
 
 h3,
@@ -60,7 +84,7 @@ h3 i {
   font-family: "Bahnschrift", "Open Sans", -apple-system, BlinkMacSystemFont,
     sans-serif;
   font-size: clamp(2rem, 2vw, 100rem);
-  color: #0b448f;
+  color: var(--h3-color);
 }
 
 p,
@@ -74,7 +98,6 @@ noscript {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
-  margin: 0 5vw 0 5vw;
 }
 
 .welcome div h1,
@@ -109,22 +132,29 @@ hr {
   border: none;
   margin: 5vh auto;
   height: 0.75vh;
-  background-color: #073a4d;
+  background-color: var(--p-h2-hr-color);
   border-radius: clamp(10px, 5vw, 100px);
 }
 
 footer {
   margin: 10vh 2.5vw 0 2.5vw;
   padding: 2.5vh 0 1.5vh 0;
-  height: 10vh;
-  background-color: #073a4d;
+  background-color: var(--footer-color);
   border-radius: 15px 15px 0 0;
 }
 
 footer p,
 footer a {
   text-align: center;
-  color: white;
+  color: var(--footer-text);
+}
+
+.footerlinks {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-auto-flow: column;
+  column-gap: clamp(1rem, 2vw, 100rem);
 }
 
 a {
@@ -143,29 +173,27 @@ header {
   padding: clamp(1rem, 2vh, 100rem);
   height: 6vh;
   border-radius: 0 0 15px 15px;
-  background-color: rgba(79, 137, 138, 0.75);
+  background-color: var(--header-color);
 }
 
 header a {
-  color: #073a4d;
+  color: var(--p-h2-hr-color);
 }
 
 .socialcontainer div i {
-  color: white;
-  padding: clamp(1rem, 1.25vmax, 100rem) clamp(1rem, 1.25vmax, 100rem);
-  border-radius: 1500px;
-  background-color: #073a4d;
+  color: var(--bg-color);
   text-align: center;
-  font-size: clamp(1rem, 1.25vw, 100rem);
-  transition-duration: 250ms;
+  font-size: clamp(1rem, 1.5vmax, 100rem);
+  padding: clamp(1rem, 1.25vh, 400rem) clamp(1rem, 1.25vh, 400rem);
+  color: white;
 }
 
 .aboutme {
   margin-top: 1vh;
 }
 
-.socialcontainer div i:hover {
-  background-color: #0f6584;
+.socialcontainer div:hover {
+  background-color: var(--social-hover);
   transform: scale(1.1);
 }
 
@@ -176,6 +204,13 @@ header a {
   align-content: center;
   grid-auto-flow: column;
   gap: clamp(1rem, 1.25vw, 100rem);
+}
+
+.socialcontainer div {
+  transition-duration: 250ms;
+  padding: clamp(1rem, 0.75vh, 400rem) clamp(1rem, 0.75vh, 400rem);
+  border-radius: 1500px;
+  background-color: #073a4d;
 }
 
 .arrowholder {
@@ -234,6 +269,7 @@ header a {
 
 .arrowlink:hover {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .emoji {
@@ -274,8 +310,8 @@ noscript p {
   text-align: center;
   padding: 1vh 2vw;
   margin: 0;
-  background-color: darkcyan;
-  color: white;
+  background-color: var(--h1-scroll-color);
+  color: var(--bg-color);
   border-radius: 0 0 15px 15px;
 }
 

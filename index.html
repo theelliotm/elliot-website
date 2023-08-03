@@ -18,6 +18,22 @@
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
     </script>
+    <script>
+      var theme = "light";
+      if (sessionStorage.getItem("theme"))
+        theme = sessionStorage.getItem("theme");
+      if (theme === "dark")
+        document.documentElement.setAttribute("data-theme", "dark");
+
+      function toggleTheme() {
+        theme = theme === "dark" ? "light" : "dark";
+        sessionStorage.setItem("theme", theme);
+        document.documentElement.setAttribute(
+          "data-theme",
+          theme === "dark" ? "dark" : null
+        );
+      }
+    </script>
 
     <!-- remove this during production -->
     <!-- <link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
@@ -28,7 +44,9 @@
   </head>
   <body>
     <noscript>
-      <p>Without JavaScript, the website is just a shell of its former self.</p>
+      <p>
+        Without JavaScript, this website is just a shell of its former self.
+      </p>
     </noscript>
     <header>
       <div class="socialcontainer">
@@ -74,17 +92,46 @@
       </div>
       <div class="aboutme">
         <p>
-          I’m a rising-sophomore at Texas A&M University aiming to pursue a
-          degree in Computer Engineering. I’ve been interested in
-          computer-related engineering fields for ages though, from my first
-          Visual Basic program to developing mods for computer games and
-          eventually programming massive autonomous robots. I've outlined a
-          couple of my projects below:
+          I’m a sophomore at Texas A&M University pursuing a degree in Computer
+          Engineering. I’ve been interested in computer-related engineering
+          fields for ages though, from my first Visual Basic program to
+          programming large autonomous robots and eventually dealing with
+          government networking infrastructure. I've outlined a couple of my
+          projects below:
         </p>
       </div>
       <hr class="seperator" />
       <h1>My Projects</h1>
       <div id="projects">
+        <div class="project">
+          <div>
+            <h3>
+              Laptop Tech-Stack Management and Installation in Sheriff Vehicles
+            </h3>
+            <p>
+              As a 2023 Fort Bend County IT Networking intern, I installed and
+              managed a large new batch of in-car networking equipment and
+              laptops for the Sheriff's Office division. I gained knowledge in
+              <b>Azure Active Directory</b> / Microsoft Entra ID, handling
+              authentication and access control. Additionally, I successfully
+              managed Axon body camera software, ensuring
+              <b>data integrity protocols</b>. Moreover, I explored Cradlepoint
+              in-car routing, which optimizes
+              <b
+                >data communications and connectivity for patrol and crisis
+                response vehicles</b
+              >. This enriching experience strengthened my passion for IT
+              networking and its potential to
+              <b>positively impact public safety</b> and society.
+            </p>
+          </div>
+          <div class="projectimage">
+            <img
+              alt="Image of project website. Three areas are shown: a team list with preferences, a floor list with capacities, and a button to generate optimal team combinations."
+              src="./assets/SOlaptop.jpg"
+            />
+          </div>
+        </div>
         <div class="project">
           <div>
             <h3>Hackathon Project Interface and Cloud Networking</h3>
@@ -130,7 +177,7 @@
           </div>
           <div class="projectimage">
             <img
-              alt="Image of project website. Three areas are shown: a team list with preferences, a floor list with capacities, and a button to generate optimal team combinations."
+              title="Image of project website. Three areas are shown: a team list with preferences, a floor list with capacities, and a button to generate optimal team combinations."
               src="./assets/hackathon.png"
             />
           </div>
@@ -157,7 +204,7 @@
           </div>
           <div class="projectimage">
             <img
-              alt="I wasn't sure if I was allowed to show images of the real server racks I worked on, so this is just a copyright free image I found online instead."
+              title="I can't show images of the real server racks I worked on, so this is just a copyright free image I found online instead."
               src="./assets/serverrack.png"
             />
           </div>
@@ -211,7 +258,7 @@
           <div class="projectimage">
             <img
               src="./assets/reactsite.png"
-              alt="An image of the announcements page of the Robotics website. It shows dynamic blog posts, social media embeds, and real-time competition results."
+              title="An image of the announcements page of the Robotics website. It shows dynamic blog posts, social media embeds, and real-time competition results."
             />
           </div>
         </div>
@@ -238,7 +285,7 @@
           <div class="projectimage">
             <img
               src="./assets/proxmox.png"
-              alt="An image of a screen on Proxmox showing a list of virtual machines / containers and how many system resources each is using."
+              title="An image of a screen on Proxmox showing a list of virtual machines / containers and how many system resources each is using."
             />
           </div>
         </div>
@@ -264,7 +311,15 @@
       </a>
     </main>
     <footer>
-      <p>©️ <span id="year"></span><noscript>2023-</noscript> Elliot Michlin</p>
+      <p>©️ <span id="year">2023-</span> Elliot Michlin</p>
+      <a class="arrowlink arrowholder center small" onclick="toggleTheme()">
+        <div class="arrow">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </div>
+        <div class="arrowtext">
+          <p>Change Theme</p>
+        </div>
+      </a>
       <a href="./privacy" class="arrowlink arrowholder center small">
         <div class="arrow">
           <i class="fa-solid fa-arrow-right"></i>

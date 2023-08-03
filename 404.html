@@ -16,15 +16,23 @@
     <!-- <link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="./assets/fontawesome/css/solid.css" rel="stylesheet" /> -->
-
+    <script type="text/javascript">
+      if (sessionStorage.getItem("dark_mode"))
+        document.documentElement.setAttribute(
+          "data-theme",
+          sessionStorage.getItem("dark_mode") ? "dark" : "light"
+        );
+    </script>
     <title>Elliot's Homepage / 404</title>
   </head>
   <body>
     <noscript>
-      <p>Without JavaScript, the website is just a shell of its former self.</p>
+      <p>
+        Without JavaScript, this website is just a shell of its former self.
+      </p>
     </noscript>
     <header>
-      <a href="./index" class="arrowlink arrowholder center large">
+      <a href="/" class="arrowlink arrowholder center large">
         <div class="arrow">
           <i class="fa-solid fa-arrow-right"></i>
           <!-- <p class="emoji">📫</p> -->
