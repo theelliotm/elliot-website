@@ -17,10 +17,10 @@
     <link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="./assets/fontawesome/css/solid.css" rel="stylesheet" /> -->
     <script type="text/javascript">
-      if (sessionStorage.getItem("dark_mode"))
+      if (sessionStorage.getItem("theme"))
         document.documentElement.setAttribute(
           "data-theme",
-          sessionStorage.getItem("dark_mode") ? "dark" : "light"
+          sessionStorage.getItem("theme") === "dark" ? "dark" : "light"
         );
     </script>
     <title>Elliot's Homepage / 404</title>

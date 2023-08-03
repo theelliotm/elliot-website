@@ -10,7 +10,7 @@
       crossorigin="anonymous"
     ></script>
     <link href="./style.css" rel="stylesheet" />
-    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" href="./assets/favicon.ico" />
 
     <title>Elliot's Homepage / Privacy</title>
 
@@ -20,10 +20,10 @@
     <link href="./assets/fontawesome/css/solid.css" rel="stylesheet" /> -->
 
     <script type="text/javascript">
-      if (sessionStorage.getItem("dark_mode"))
+      if (sessionStorage.getItem("theme"))
         document.documentElement.setAttribute(
           "data-theme",
-          sessionStorage.getItem("dark_mode") ? "dark" : "light"
+          sessionStorage.getItem("theme") === "dark" ? "dark" : "light"
         );
     </script>
   </head>
