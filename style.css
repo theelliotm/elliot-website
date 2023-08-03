@@ -209,6 +209,7 @@ header a {
 .socialcontainer div {
   transition-duration: 250ms;
   padding: clamp(1rem, 0.75vh, 400rem) clamp(1rem, 0.75vh, 400rem);
+  margin: 1vh 0 1vh 0;
   border-radius: 1500px;
   background-color: #073a4d;
 }
