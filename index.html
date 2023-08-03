@@ -18,6 +18,22 @@
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
     </script>
+    <script>
+      var theme = "light";
+      if (sessionStorage.getItem("theme"))
+        theme = sessionStorage.getItem("theme");
+      if (theme === "dark")
+        document.documentElement.setAttribute("data-theme", "dark");
+
+      function toggleTheme() {
+        theme = theme === "dark" ? "light" : "dark";
+        sessionStorage.setItem("theme", theme);
+        document.documentElement.setAttribute(
+          "data-theme",
+          theme === "dark" ? "dark" : null
+        );
+      }
+    </script>
 
     <!-- remove this during production -->
     <!-- <link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
@@ -76,12 +92,12 @@
       </div>
       <div class="aboutme">
         <p>
-          I’m a rising-sophomore at Texas A&M University aiming to pursue a
-          degree in Computer Engineering. I’ve been interested in
-          computer-related engineering fields for ages though, from my first
-          Visual Basic program to developing mods for computer games and
-          eventually programming massive autonomous robots. I've outlined a
-          couple of my projects below:
+          I’m a sophomore at Texas A&M University pursuing a degree in Computer
+          Engineering. I’ve been interested in computer-related engineering
+          fields for ages though, from my first Visual Basic program to
+          programming large autonomous robots and eventually dealing with
+          government networking infrastructure. I've outlined a couple of my
+          projects below:
         </p>
       </div>
       <hr class="seperator" />
@@ -89,19 +105,24 @@
       <div id="projects">
         <div class="project">
           <div>
-            <h3>Sheriff's Office Laptop Programming and Installation</h3>
+            <h3>
+              Laptop Tech-Stack Management and Installation in Sheriff Vehicles
+            </h3>
             <p>
               As a 2023 Fort Bend County IT Networking intern, I installed and
-              managed a massive new batch of in-car networking equipment and
+              managed a large new batch of in-car networking equipment and
               laptops for the Sheriff's Office division. I gained knowledge in
-              Azure Active Directory / Microsoft Entra ID, handling
+              <b>Azure Active Directory</b> / Microsoft Entra ID, handling
               authentication and access control. Additionally, I successfully
-              managed Axon body camera software, ensuring data integrity
-              protocols. Moreover, I explored Cradlepoint in-car routing, which
-              optimizes data communications and connectivity for patrol and
-              crisis response vehicles. This enriching experience strengthened
-              my passion for IT networking and its potential to positively
-              impact public safety and society.
+              managed Axon body camera software, ensuring
+              <b>data integrity protocols</b>. Moreover, I explored Cradlepoint
+              in-car routing, which optimizes
+              <b
+                >data communications and connectivity for patrol and crisis
+                response vehicles</b
+              >. This enriching experience strengthened my passion for IT
+              networking and its potential to
+              <b>positively impact public safety</b> and society.
             </p>
           </div>
           <div class="projectimage">
@@ -291,6 +312,14 @@
     </main>
     <footer>
       <p>©️ <span id="year">2023-</span> Elliot Michlin</p>
+      <a class="arrowlink arrowholder center small" onclick="toggleTheme()">
+        <div class="arrow">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </div>
+        <div class="arrowtext">
+          <p>Change Theme</p>
+        </div>
+      </a>
       <a href="./privacy" class="arrowlink arrowholder center small">
         <div class="arrow">
           <i class="fa-solid fa-arrow-right"></i>

@@ -19,14 +19,20 @@
     <link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="./assets/fontawesome/css/solid.css" rel="stylesheet" /> -->
 
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      if (sessionStorage.getItem("dark_mode"))
+        document.documentElement.setAttribute(
+          "data-theme",
+          sessionStorage.getItem("dark_mode") ? "dark" : "light"
+        );
+    </script>
   </head>
   <body>
     <noscript>
       Without JavaScript, this website is just a shell of its former self.
     </noscript>
     <header>
-      <a href="./" class="arrowlink arrowholder center large">
+      <a href="/" class="arrowlink arrowholder center large">
         <div class="arrow">
           <i class="fa-solid fa-arrow-right"></i>
           <!-- <p class="emoji">📫</p> -->
@@ -136,7 +142,7 @@
       <p>By using our website, you hereby consent to our Privacy Policy.</p>
     </main>
     <footer>
-      <p>©️ <span id="year"></span><noscript>2022-</noscript> Elliot Michlin</p>
+      <p>©️ <span id="year"></span><noscript>2023-</noscript> Elliot Michlin</p>
       <script type="text/javascript">
         document.getElementById("year").innerHTML = new Date().getFullYear();
       </script>
