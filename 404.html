@@ -17,11 +17,13 @@
     <link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="./assets/fontawesome/css/solid.css" rel="stylesheet" /> -->
     <script type="text/javascript">
-      if (sessionStorage.getItem("theme"))
-        document.documentElement.setAttribute(
-          "data-theme",
-          sessionStorage.getItem("theme") === "dark" ? "dark" : "light"
-        );
+      if (
+        sessionStorage.getItem("theme") === "dark" ||
+        (window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches &&
+          sessionStorage.getItem("theme") !== "light")
+      )
+        document.documentElement.setAttribute("data-theme", "dark");
     </script>
     <title>Elliot's Homepage / 404</title>
   </head>

@@ -20,6 +20,14 @@
     </script>
     <script>
       var theme = "light";
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        // dark mode
+        theme = "dark";
+      }
+
       if (sessionStorage.getItem("theme"))
         theme = sessionStorage.getItem("theme");
       if (theme === "dark")
