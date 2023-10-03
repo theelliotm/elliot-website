@@ -8,7 +8,7 @@
   --bg-color: #fff;
   --footer-text: white;
   --footer-color: #073a4d;
-  --header-photo: url("./assets/melight.png");
+  --header-photo: url("./assets/me.jpg");
 }
 
 [data-theme="dark"] {
@@ -20,7 +20,7 @@
   --social-button: #0f6584;
   --bg-color: #182d35;
   --footer-color: #2c4f5c;
-  --header-photo: url("./assets/medark.png");
+  --header-photo: url("./assets/me.jpg");
 }
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
@@ -123,6 +123,7 @@ h2.fourOfour {
 
 #welcomeimage {
   background-image: var(--header-photo);
+
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50% 40%;
