@@ -1,33 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --h1-scroll-color: darkcyan;
-  --header-color: rgba(79, 137, 138, 0.75);
+  --header-color: #073a4d;
   --h3-color: #0b448f;
   --p-h2-hr-color: #073a4d;
   --social-button: #0f6584;
   --social-hover: #0f6584;
-  --bg-color: #fff;
-  --footer-text: white;
+  --bg-color: #eff8fc;
   --footer-color: #073a4d;
-  --header-photo: url("./assets/me.jpg");
+  --header-photo: url("/assets/me.jpg");
+  --mark-color: rgb(0, 206, 206);
+  --mark-text-color: #073a4d;
+  --footer-text: white;
 }
 
 [data-theme="dark"] {
   --h1-scroll-color: rgb(9, 153, 153);
-  --header-color: rgba(73, 140, 141, 0.75);
+  --header-color: #182d35;
   --h3-color: #1c8cb4;
-  --p-h2-hr-color: #fff;
+  --p-h2-hr-color: #ebebeb;
   --social-hover: #2c4f5c;
   --social-button: #0f6584;
-  --bg-color: #182d35;
-  --footer-color: #2c4f5c;
-  --header-photo: url("./assets/me.jpg");
+  --bg-color: #0e1518;
+  --footer-color: #182d35;
+  --header-photo: url("/assets/me.jpg");
+  --mark-color: rgb(0, 206, 206);
+  --mark-text-color: black;
+  --footer-text: white;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
 @font-face {
   font-family: Stabillo;
-  src: url("./assets/StabilloMedium.otf");
+  src: url("/assets/StabilloMedium.otf");
 }
 
 body {
@@ -50,34 +59,51 @@ body::-webkit-scrollbar-thumb {
   border: 3px solid var(--bg-color); /* creates padding around scroll thumb */
 }
 
-main {
+/* main {
   margin: 2vh 10vw 5vh 10vw;
   font-size: 100%;
+  max-width: 1024px;
+} */
+
+header {
+  background-color: var(--header-color);
 }
 
-h2,
-p {
-  margin: 1vh;
+header p,
+header a,
+header i {
+  color: var(--footer-text);
 }
 
-main p,
-main i {
+p,
+i {
   color: var(--p-h2-hr-color);
+  line-height: 28px;
+}
+
+mark {
+  background-color: var(--mark-color) !important;
+  color: var(--mark-text-color) !important;
+  font-weight: bolder;
 }
 
 h1 {
   font-family: "Stabillo";
-  font-size: clamp(3rem, 5vw, 100rem);
   color: var(--h1-scroll-color);
   letter-spacing: 2px;
+  font-size: 56px;
 }
 
 h2 {
   font-family: "Bahnschrift", "Open Sans", -apple-system, BlinkMacSystemFont,
     sans-serif;
   font-weight: bold;
-  font-size: clamp(2rem, 2.5vw, 100rem);
   color: var(--p-h2-hr-color);
+}
+
+h3 {
+  text-align: left;
+  font-weight: bold;
 }
 
 h3,
@@ -85,36 +111,34 @@ h3 i {
   margin: 3vh 0;
   font-family: "Bahnschrift", "Open Sans", -apple-system, BlinkMacSystemFont,
     sans-serif;
-  font-size: clamp(2rem, 2vw, 100rem);
   color: var(--h3-color);
+  font-size: 28px;
 }
 
 p,
 noscript {
   font-family: "Bahnschrift", "Open Sans", -apple-system, BlinkMacSystemFont,
     sans-serif;
-  font-size: clamp(1rem, 1.25vw, 100rem);
+  font-size: 18px;
+  font-weight: 300;
 }
 
 .welcome {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
+  margin: auto;
+  width: fit-content;
 }
 
-.welcome div h1,
-h1.fourOfour {
-  font-size: clamp(8rem, 12vw, 100rem);
+.welcome div h1 {
   letter-spacing: 5px;
   margin: 0;
-  text-align: center;
 }
 
-.welcome div h2,
-h2.fourOfour {
-  font-size: clamp(3rem, 5vw, 100rem);
+.welcome div h2 {
+  color: var(--footer-text);
   margin: 0;
-  text-align: center;
 }
 
 .welcometext {
@@ -123,11 +147,14 @@ h2.fourOfour {
 
 #welcomeimage {
   background-image: var(--header-photo);
-
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: 50% 40%;
-  margin: 0 0 1vh 0;
+  /* background-position: 50% 40%; */
+  /* margin: 0 0 1vh 0; */
+}
+
+p b {
+  font-weight: 900;
 }
 
 hr {
@@ -139,14 +166,14 @@ hr {
 }
 
 footer {
-  margin: 10vh 2.5vw 0 2.5vw;
   padding: 2.5vh 0 1.5vh 0;
   background-color: var(--footer-color);
   border-radius: 15px 15px 0 0;
 }
 
 footer p,
-footer a {
+footer a,
+footer i {
   text-align: center;
   color: var(--footer-text);
 }
@@ -165,21 +192,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-header {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0px;
-  margin: 0px 2.5vw;
-  padding: clamp(1rem, 2vh, 100rem);
-  height: 6vh;
-  border-radius: 0 0 15px 15px;
-  background-color: var(--header-color);
-}
-
-header a {
-  color: var(--p-h2-hr-color);
 }
 
 .socialcontainer div i {
@@ -216,7 +228,6 @@ header a {
 }
 
 .arrowholder {
-  font-size: clamp(2rem, 1vw, 100rem);
   display: grid;
   align-content: center;
   grid-auto-flow: column;
@@ -226,6 +237,7 @@ header a {
 .arrowholder.large {
   font-weight: bolder;
   gap: clamp(0.5rem, 1.25vw, 100rem);
+  font-size: x-large;
 }
 
 .arrowholder.left {
@@ -237,6 +249,10 @@ header a {
   justify-content: center;
 }
 
+.arrowtext p {
+  font-weight: normal;
+}
+
 .arrowholder .arrowtext,
 .arrowholder .arrow {
   transition: ease all 250ms;
@@ -246,11 +262,9 @@ header a {
 }
 
 .arrowholder.small .arrow {
-  font-size: clamp(1rem, 1vw, 100rem);
 }
 
 .arrowholder.large .arrow {
-  font-size: clamp(2rem, 1.5vw, 100rem);
 }
 
 .arrowholder.large:hover .arrowtext {
@@ -301,7 +315,6 @@ header a {
 
 .projectimage img {
   border-radius: 10px;
-  justify-content: center;
   height: 35vh;
   width: auto;
   object-fit: contain;
@@ -336,10 +349,13 @@ noscript p {
     grid-auto-flow: column;
     grid-template-columns: 2fr 1fr;
   }
-
-  #projects {
-    margin: 0 2vw;
+  .h3 {
+    text-align: center;
   }
+
+  /* #projects {
+    margin: 0 1vw;
+  } */
 }
 
 @media only screen and (min-width: 640px) {
@@ -359,5 +375,8 @@ noscript p {
   .welcome div h1,
   .welcome div h2 {
     text-align: left;
+  }
+  .h3 {
+    text-align: center;
   }
 }

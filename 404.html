@@ -9,7 +9,7 @@
       src="https://kit.fontawesome.com/7c99d65b69.js"
       crossorigin="anonymous"
     ></script>
-    <link href="./style.css" rel="stylesheet" />
+    <link href="./combined.css" rel="stylesheet" />
     <link rel="icon" href="./assets/favicon.ico" />
 
     <!-- remove this during production -->
@@ -33,7 +33,7 @@
         Without JavaScript, this website is just a shell of its former self.
       </p>
     </noscript>
-    <header>
+    <header class="p-10">
       <a href="/" class="arrowlink arrowholder center large">
         <div class="arrow">
           <i class="fa-solid fa-arrow-right"></i>
@@ -44,9 +44,13 @@
         </div>
       </a>
     </header>
-    <main>
-      <h1 class="fourOfour">404</h1>
-      <h2 class="fourOfour">Oops, no page found.</h2>
+    <main
+      class="py-10 max-w-screen-xl mx-auto mt-10 px-4 xs:px-8 sm:px-16 md:px-24"
+    >
+      <h3 class="fourOfour text-9xl text-center md:text-left">404</h3>
+      <h2 class="fourOfour text-6xl text-left text-center md:text-left">
+        Oops, no page found.
+      </h2>
     </main>
   </body>
 </html>

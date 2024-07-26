@@ -9,7 +9,7 @@
       src="https://kit.fontawesome.com/7c99d65b69.js"
       crossorigin="anonymous"
     ></script>
-    <link href="./style.css" rel="stylesheet" />
+    <link href="./combined.css" rel="stylesheet" />
     <link rel="icon" href="./assets/favicon.ico" />
 
     <title>Elliot's Homepage / Privacy</title>
@@ -33,7 +33,7 @@
     <noscript>
       Without JavaScript, this website is just a shell of its former self.
     </noscript>
-    <header>
+    <header class="p-10">
       <a href="/" class="arrowlink arrowholder center large">
         <div class="arrow">
           <i class="fa-solid fa-arrow-right"></i>
@@ -44,8 +44,10 @@
         </div>
       </a>
     </header>
-    <main>
-      <h1>Privacy Policy for Elliot's Dev Site</h1>
+    <main
+      class="max-w-screen-xl mx-auto mt-10 px-4 xs:px-8 sm:px-16 md:px-24 lg:px-24"
+    >
+      <h3 class="text-5xl">Privacy Policy for Elliot's Dev Site</h3>
 
       <p>
         At Elliot's Dev Site, accessible from michlin.dev, one of our main
@@ -59,7 +61,7 @@
         Privacy Policy, do not hesitate to contact us.
       </p>
 
-      <h2>Log Files</h2>
+      <h3 class="my-4">Log Files</h3>
 
       <p>
         Elliot's Dev Site follows a standard procedure of using log files. These
@@ -74,7 +76,7 @@
         information.
       </p>
 
-      <h2>Privacy Policies</h2>
+      <h3 class="my-4">Privacy Policies</h3>
 
       <p>
         You may consult this list to find the Privacy Policy for each of the
@@ -96,7 +98,7 @@
         cookies that are used by third-party advertisers.
       </p>
 
-      <h2>Third Party Privacy Policies</h2>
+      <h3 class="my-4">Third Party Privacy Policies</h3>
 
       <p>
         Elliot's Dev Site's Privacy Policy does not apply to other advertisers
@@ -113,7 +115,7 @@
         websites.
       </p>
 
-      <h2>Children's Information</h2>
+      <h3 class="my-4">Children's Information</h3>
 
       <p>
         Another part of our priority is adding protection for children while
@@ -129,7 +131,7 @@
         to promptly remove such information from our records.
       </p>
 
-      <h2>Online Privacy Policy Only</h2>
+      <h3 class="my-4">Online Privacy Policy Only</h3>
 
       <p>
         This Privacy Policy applies only to our online activities and is valid
@@ -139,15 +141,19 @@
         than this website.
       </p>
 
-      <h2>Consent</h2>
+      <h3 class="my-4">Consent</h3>
 
       <p>By using our website, you hereby consent to our Privacy Policy.</p>
-    </main>
-    <footer>
+      
+      <hr class="seperator" />
+
       <p>©️ <span id="year"></span><noscript>2023-</noscript> Elliot Michlin</p>
       <script type="text/javascript">
         document.getElementById("year").innerHTML = new Date().getFullYear();
       </script>
-    </footer>
+
+      <a href="./" class="arrowlink ">
+    <p>Back Home</p>
+    </a>
   </body>
 </html>
