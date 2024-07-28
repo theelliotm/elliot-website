@@ -730,7 +730,7 @@ video {
   --header-color: #073a4d;
   --h3-color: #0b448f;
   --p-h2-hr-color: #073a4d;
-  --social-button: #060606;
+  --social-button: hsl(0, 0%, 2%);
   --social-hover: #073a4d;
   --bg-color: #eff8fc;
   --footer-color: #073a4d;
@@ -747,8 +747,8 @@ video {
   --header-color: #182d35;
   --h3-color: #1c8cb4;
   --p-h2-hr-color: #ebebeb;
-  --social-hover: #182d35;
-  --social-button: #0f6584;
+  --social-hover: #125872;
+  --social-button: #146684;
   --bg-color: #0e1518;
   --footer-color: #182d35;
   --header-photo: url("/assets/me-bw.jpg");
