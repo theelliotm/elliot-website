@@ -9,8 +9,10 @@
       src="https://kit.fontawesome.com/7c99d65b69.js"
       crossorigin="anonymous"
     ></script>
-    <link href="./style.css" rel="stylesheet" />
+    <link href="./combined.css" rel="stylesheet" />
     <link rel="icon" href="./assets/favicon.ico" />
+
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
 
     <script>
       fetch(`https://api.michlin.dev/core/v1/ping?time=${new Date().getTime()}`)
@@ -56,8 +58,9 @@
         Without JavaScript, this website is just a shell of its former self.
       </p>
     </noscript>
-    <header>
-      <div class="socialcontainer">
+    <div class="scc sticky top-0 max-w-screen-2xl mx-auto" >
+      <div class="absolute w-full max-w-screen-2xl">
+        <div class="socialcontainer">
         <div>
           <a
             href="https://www.linkedin.com/in/elliotmichlin/"
@@ -68,14 +71,14 @@
           </a>
         </div>
         <div>
-          <a
-            href="https://www.x.com/elliotmichlin/"
-            rel="noreferrer noopener"
-            target="_blank"
-          >
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-        </div>
+            <a
+              href="https://www.x.com/elliotmichlin/"
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div> 
         <div>
           <a
             href="mailto:elliot@michlin.dev"
@@ -85,31 +88,55 @@
             <i class="fa-solid fa-envelope"></i>
           </a>
         </div>
+        <div>
+          <a
+            href="https://www.github.com/TheElliotM"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+      </div>
+  </div>
+    <header class="overflow-clip pt-16 md:pt-24">
+      <div
+        class="max-w-screen-lg mx-auto pb-8 md:pb-16 pt-4 px-8 sm:px-16 md:px-24 lg:px-24"
+      >
+        <div class="max-w-fit ml-auto mr-auto">
+          <div class="welcome">
+            <div class="welcometext mx-auto ">
+              <h1 class="text-8xl sm:text-9xl">Howdy,</h1>
+              <h2 class="text-5xl">I'm Elliot!</h2>
+            </div>
+            <div class="mt-8">
+            <img
+              id="welcomeimage"
+              src="./assets/me-bw.jpg"
+              title="Me hiking in the hills of west Texas at Garner State Park."
+              alt="Me hiking in the hills of west Texas at Garner State Park."
+            ></img>
+          </div>
+          </div>
+          <div class="aboutme">
+            <p>
+              I’m a rising junior at Texas A&M University pursuing a degree in
+              Computer Engineering (with a double minor in Cybersecurity and
+              Mathematics). I'm also currently an intern with <b>Cisco</b> as a
+              Data Center Consultant Engineer. I’ve been interested in
+              computer-related engineering fields for ages, from my first Visual
+              Basic program to programming large autonomous robots and
+              eventually dealing with government networking infrastructure. I've
+              outlined a couple of my projects below:
+            </p>
+          </div>
+        </div>
       </div>
     </header>
-    <main>
-      <div class="welcome">
-        <div class="welcometext">
-          <h1>Howdy,</h1>
-          <h2>I'm Elliot!</h2>
-        </div>
-        <div
-          id="welcomeimage"
-          alt="Me in a suit standing on the steps of the University's front building."
-        ></div>
-      </div>
-      <div class="aboutme">
-        <p>
-          I’m a rising junior at Texas A&M University pursuing a degree in Computer
-          Engineering (with a double minor in Cybersecurity and Mathematics). I'm also 
-          currently an intern with <b>Cisco</b> as a Data Center Consultant Engineer.
-          I’ve been interested in computer-related engineering fields for ages,
-          from my first Visual Basic program to programming large
-          autonomous robots and eventually dealing with government networking
-          infrastructure. I've outlined a couple of my projects below:
-        </p>
-      </div>
-      <hr class="seperator" />
+    <main
+      class="max-w-screen-xl mx-auto mt-10 px-4 xs:px-8 sm:px-16 md:px-24 lg:px-24"
+    >
       <h1>My Projects</h1>
       <div id="projects">
         <div class="project">
@@ -121,7 +148,7 @@
               As a 2023 Fort Bend County IT Networking intern, I installed and
               managed a large new batch of in-car networking equipment and
               laptops for the Sheriff's Office division. I gained knowledge in
-              <b>Azure Active Directory</b> / Microsoft Entra ID, handling
+              <mark>Azure Active Directory</mark> / Microsoft Entra ID, handling
               authentication and access control. Additionally, I successfully
               managed Axon body camera software, ensuring
               <b>data integrity protocols</b>. Moreover, I explored Cradlepoint
@@ -141,6 +168,7 @@
             />
           </div>
         </div>
+        <hr class="seperatorsmall" />
         <div class="project">
           <div>
             <h3>Hackathon Project Interface and Cloud Networking</h3>
@@ -161,7 +189,7 @@
               href="https://tinyoffice.michlin.dev"
               rel="noreferrer noopener"
               target="_blank"
-              class="arrowlink arrowholder left small"
+              class="arrowlink arrowholder dynamic small"
             >
               <div class="arrow">
                 <i class="fa-solid fa-arrow-right"></i>
@@ -174,7 +202,7 @@
               href="https://github.com/TheElliotM/tinyoffice"
               rel="noreferrer noopener"
               target="_blank"
-              class="arrowlink arrowholder left small"
+              class="arrowlink arrowholder dynamic small"
             >
               <div class="arrow">
                 <i class="fa-brands fa-github"></i>
@@ -191,6 +219,7 @@
             />
           </div>
         </div>
+        <hr class="seperatorsmall" />
         <div class="project">
           <div>
             <h3>Critical Networking Infrastructure Install</h3>
@@ -218,6 +247,7 @@
             />
           </div>
         </div>
+        <hr class="seperatorsmall" />
         <div class="project">
           <div>
             <h3>Robotics Org Promotional <i>React</i>-Based Website</h3>
@@ -241,7 +271,7 @@
               href="https://dullesrobotics.com"
               rel="noreferrer noopener"
               target="_blank"
-              class="arrowlink arrowholder left small"
+              class="arrowlink arrowholder dynamic small"
             >
               <div class="arrow">
                 <i class="fa-solid fa-arrow-right"></i>
@@ -254,7 +284,7 @@
               href="https://github.com/DullesRobotics/DullesRoboticsWebsiteReact"
               rel="noreferrer noopener"
               target="_blank"
-              class="arrowlink arrowholder left small"
+              class="arrowlink arrowholder dynamic small"
             >
               <div class="arrow">
                 <i class="fa-brands fa-github"></i>
@@ -271,6 +301,7 @@
             />
           </div>
         </div>
+        <hr class="seperatorsmall" />
         <div class="project">
           <div>
             <h3>Self-hosted Proxmox Server for Virtual Machines</h3>
@@ -302,13 +333,13 @@
       <hr class="seperator" />
       <h1>Contact Me</h1>
       <p>
-        Request a copy of my resume or recommendations, or just email me here!
+        Request a copy of my résumé or recommendations, or just email me here!
       </p>
       <a
         href="mailto:elliot@michlin.dev"
         rel="noreferrer noopener"
         target="_blank"
-        class="arrowlink arrowholder left large"
+        class="arrowlink arrowholder dynamic large"
       >
         <div class="arrow">
           <i class="fa-solid fa-arrow-right"></i>
@@ -318,28 +349,34 @@
           <p>elliot@michlin.dev 📫</p>
         </div>
       </a>
+
     </main>
-    <footer>
-      <p>©️ <span id="year">2023-</span> Elliot Michlin</p>
-      <a class="arrowlink arrowholder center small" onclick="toggleTheme()">
-        <div class="arrow">
-          <i class="fa-solid fa-circle-half-stroke"></i>
-        </div>
-        <div class="arrowtext">
-          <p>Change Theme</p>
-        </div>
-      </a>
-      <a href="./privacy" class="arrowlink arrowholder center small">
-        <div class="arrow">
-          <i class="fa-solid fa-arrow-right"></i>
-        </div>
-        <div class="arrowtext">
-          <p>Privacy 🔎</p>
-        </div>
-      </a>
-      <script type="text/javascript">
-        document.getElementById("year").innerHTML = new Date().getFullYear();
-      </script>
-    </footer>
+    <div class="sm:px-8 md:px-16 pt-16">
+      <footer class="max-w-screen-2xl mx-auto">
+        <p>©️ <span id="year">2023-</span> Elliot Michlin</p>
+        <a
+          class="arrowlink arrowholder center small py-2"
+          onclick="toggleTheme()"
+        >
+          <div class="arrow">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+          </div>
+          <div class="arrowtext">
+            <p>Change Theme</p>
+          </div>
+        </a>
+        <a href="./privacy" class="arrowlink arrowholder center small">
+          <div class="arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="arrowtext">
+            <p>Privacy 🔎</p>
+          </div>
+        </a>
+        <script type="text/javascript">
+          document.getElementById("year").innerHTML = new Date().getFullYear();
+        </script>
+      </footer>
+    </div>
   </body>
 </html>
