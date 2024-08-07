@@ -12,12 +12,15 @@
     <link href="./combined.css" rel="stylesheet" />
     <link rel="icon" href="./assets/favicon.ico" />
 
+    <!-- ping w/ session info -->
     <script>
       fetch(`https://api.michlin.dev/core/v1/ping?time=${new Date().getTime()}`)
         .then((res) => res.text())
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
     </script>
+
+    <!-- stores / changes theme -->
     <script>
       var theme = "light";
       if (
@@ -33,6 +36,20 @@
       if (theme === "dark")
         document.documentElement.setAttribute("data-theme", "dark");
 
+      function updateIcon() {
+        const moon = document.getElementById("themeicon1");
+        const sun = document.getElementById("themeicon2");
+        if(theme === "dark"){
+          sun.classList.remove("hidden");
+          moon.classList.add("hidden");
+        } else {
+          moon.classList.remove("hidden");
+          sun.classList.add("hidden");
+        }
+      }
+
+      updateIcon();
+
       function toggleTheme() {
         theme = theme === "dark" ? "light" : "dark";
         sessionStorage.setItem("theme", theme);
@@ -40,10 +57,34 @@
           "data-theme",
           theme === "dark" ? "dark" : null
         );
+        updateIcon();
       }
+
+
+    </script>
+
+    <!-- scroll bar transition -->
+    <script>
+      const debounce = (fn) => {
+        let frame;
+        return (...params) => {
+          if (frame) { 
+            cancelAnimationFrame(frame);
+          }
+          frame = requestAnimationFrame(() => {
+            fn(...params);
+          });
+        } 
+      };
+      const storeScroll = () => {
+        document.documentElement.dataset.scroll = window.scrollY;
+      }
+      document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+      storeScroll();
     </script>
 
     <!-- remove this during production -->
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
     <!-- <link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="./assets/fontawesome/css/solid.css" rel="stylesheet" /> -->
@@ -58,7 +99,8 @@
     </noscript>
     <div class="scc sticky top-0 max-w-screen-2xl mx-auto" >
       <div class="absolute w-full max-w-screen-2xl">
-        <div class="socialcontainer">
+        <div class="socialcolorcontainer">
+        <div class="socialcontainer mx-auto px-8 sm:px-16 md:px-24 lg:px-24">
         <div>
           <a
             href="https://www.linkedin.com/in/elliotmichlin/"
@@ -95,7 +137,17 @@
             <i class="fa-brands fa-github"></i>
           </a>
         </div>
+        <div class="themechange ">
+          <button onclick="toggleTheme()" class="hover:cursor-pointer">
+            <i id="themeicon1" class="fa-solid fa-moon mx-1">
+            </i>
+            <i id="themeicon2" class="fa-solid fa-sun hidden">
+            </i>
+          </button>
+        </div>
       </div>
+      </div>
+
       </div>
   </div>
     <header class="overflow-clip pt-16 md:pt-24">

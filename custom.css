@@ -4,7 +4,11 @@
 
 :root {
   --h1-scroll-color: darkcyan;
-  --header-color: #073a4d;
+  --header-color: linear-gradient(
+    135deg,
+    #073a4d 00%,
+    rgba(14, 21, 24, 1) 200%
+  );
   --h3-color: #0b448f;
   --p-h2-hr-color: #073a4d;
   --social-button: hsl(0, 0%, 2%);
@@ -21,10 +25,14 @@
 
 [data-theme="dark"] {
   --h1-scroll-color: rgb(9, 153, 153);
-  --header-color: #182d35;
+  --header-color: linear-gradient(
+    135deg,
+    rgba(24, 45, 53, 1) 0%,
+    rgba(14, 21, 24, 1) 100%
+  );
   --h3-color: #1c8cb4;
   --p-h2-hr-color: #ebebeb;
-  --social-hover: #125872;
+  --social-hover: #146684;
   --social-button: #146684;
   --bg-color: #0e1518;
   --footer-color: #182d35;
@@ -34,6 +42,18 @@
   --footer-text: white;
   --small-sep-color: #073a4d82;
   --social-header-transparent: #182d35d4;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
@@ -70,7 +90,8 @@ body::-webkit-scrollbar-thumb {
 } */
 
 header {
-  background-color: var(--header-color);
+  background: var(--header-color);
+  transition-duration: 500ms;
 }
 
 header p,
@@ -188,6 +209,7 @@ footer {
   padding: 2.5vh 0 1.5vh 0;
   background-color: var(--footer-color);
   border-radius: 15px 15px 0 0;
+  transition-duration: 500ms;
 }
 
 footer p,
@@ -216,7 +238,7 @@ a:hover {
 .socialcontainer div i {
   text-align: center;
   font-size: 25px;
-  margin: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
   color: white;
 }
 
@@ -225,18 +247,58 @@ a:hover {
 }
 
 .socialcontainer div:hover {
-  background-color: var(--social-hover);
   transform: scale(1.1);
 }
 
+.themechange button:active {
+  transform: scale(0.8);
+}
+
+.themechange button {
+  transition-duration: 75ms;
+  transition-timing-function: ease-out;
+}
+
+.socialcontainer div:active {
+  transform: scale(0.8);
+}
+
+.socialcontainer div {
+  transition-duration: 75ms;
+  transition-timing-function: ease-out;
+}
+
+.themechange {
+  display: none;
+}
+.socialcolorcontainer {
+  background-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  border-radius: 0 0 15px 15px;
+  transition-duration: 500ms;
+}
+
 .socialcontainer {
-  background-color: var(--social-header-transparent);
   display: grid;
   justify-content: center;
   align-content: center;
+  grid-template-columns: 25fr 25fr 25fr 25fr;
   grid-auto-flow: column;
-  gap: clamp(1rem, 1.25vw, 1.5rem);
-  border-radius: 0 0 15px 15px;
+  gap: clamp(1rem, 2vw, 3rem);
+  max-width: 1024px;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+html:not([data-scroll="0"]) .socialcolorcontainer {
+  background-color: var(--social-header-transparent);
+}
+
+html:not([data-scroll="0"]) .socialcontainer {
+  max-width: 1280px;
+}
+
+html:not([data-scroll="0"]) .socialcontainer div:not(.themechange):hover {
+  background-color: var(--social-hover);
 }
 
 .scc {
@@ -244,9 +306,20 @@ a:hover {
 }
 
 .socialcontainer div {
-  transition-duration: 250ms;
-  margin: 1vh 0 1vh 0;
   border-radius: 1500px;
+  justify-content: center;
+  align-content: center;
+  transition-duration: 250ms;
+}
+
+.socialcontainer div.themechange {
+  margin: 1vh 0vh 1vh auto;
+
+  /* background-color: #073a4d; */
+}
+
+.socialcontainer div:not(.themechange) {
+  margin: 1vh auto 1vh auto;
   /* background-color: #073a4d; */
 }
 
@@ -269,7 +342,7 @@ a:hover {
 }
 
 .arrowholder.left {
-  margin: 2vh 1vw;
+  margin: 20px 0;
   justify-content: left;
 }
 
@@ -357,6 +430,12 @@ noscript p {
 }
 
 @media only screen and (min-width: 640px) {
+  .socialcontainer {
+    grid-template-columns: 5fr 5fr 5fr 5fr 80fr;
+  }
+  .themechange {
+    display: block;
+  }
   h1 {
     text-align: left;
   }
@@ -370,6 +449,10 @@ noscript p {
     margin: 2vh 1vw;
     justify-content: left;
   }
+  .socialcontainer div i {
+    text-align: center;
+    font-size: 30px;
+  }
 }
 
 @media only screen and (min-width: 770px) {
@@ -380,6 +463,7 @@ noscript p {
     width: 300px;
     height: auto;
   }
+
   .projectimage img {
     height: auto;
     width: 25vw;
@@ -406,10 +490,6 @@ noscript p {
   .welcometext {
     margin-right: 32px;
     margin-left: 0px;
-  }
-  .socialcontainer div i {
-    text-align: center;
-    font-size: 30px;
   }
   /* #projects {
     margin: 0 1vw;
