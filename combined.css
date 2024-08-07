@@ -610,6 +610,11 @@ video {
   top: 0px;
 }
 
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -634,6 +639,10 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.hidden {
+  display: none;
 }
 
 .w-full {
@@ -661,6 +670,11 @@ video {
   overflow: clip;
 }
 
+.rounded-b-xl {
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+
 .p-10 {
   padding: 2.5rem;
 }
@@ -683,6 +697,10 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
 .pb-8 {
@@ -725,6 +743,14 @@ video {
   line-height: 1;
 }
 
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 :root {
   --h1-scroll-color: darkcyan;
   --header-color: #073a4d;
@@ -744,10 +770,10 @@ video {
 
 [data-theme="dark"] {
   --h1-scroll-color: rgb(9, 153, 153);
-  --header-color: #182d35;
+  --header-color: rgba(24, 45, 53, 1);
   --h3-color: #1c8cb4;
   --p-h2-hr-color: #ebebeb;
-  --social-hover: #125872;
+  --social-hover: #146684;
   --social-button: #146684;
   --bg-color: #0e1518;
   --footer-color: #182d35;
@@ -757,6 +783,18 @@ video {
   --footer-text: white;
   --small-sep-color: #073a4d82;
   --social-header-transparent: #182d35d4;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 @font-face {
@@ -777,8 +815,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--bg-color);
-  /* color of the tracking area */
+  background-color: inherit;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -797,7 +834,8 @@ body::-webkit-scrollbar-thumb {
 } */
 
 header {
-  background-color: var(--header-color);
+  background: var(--header-color);
+  transition-duration: 500ms;
 }
 
 header p,
@@ -916,6 +954,7 @@ footer {
   padding: 2.5vh 0 1.5vh 0;
   background-color: var(--footer-color);
   border-radius: 15px 15px 0 0;
+  transition-duration: 500ms;
 }
 
 footer p,
@@ -945,7 +984,7 @@ a:hover {
 .socialcontainer div i {
   text-align: center;
   font-size: 25px;
-  margin: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
   color: white;
 }
 
@@ -954,18 +993,60 @@ a:hover {
 }
 
 .socialcontainer div:hover {
-  background-color: var(--social-hover);
   transform: scale(1.1);
 }
 
+.themechange button:active {
+  transform: scale(0.8);
+}
+
+.themechange button {
+  transition-duration: 75ms;
+  transition-timing-function: ease-out;
+}
+
+.socialcontainer div:active {
+  transform: scale(0.8);
+}
+
+.socialcontainer div {
+  transition-duration: 75ms;
+  transition-timing-function: ease-out;
+}
+
+.themechange {
+  display: none;
+}
+
+.socialcolorcontainer {
+  background-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  border-radius: 0 0 15px 15px;
+  transition-duration: 500ms;
+}
+
 .socialcontainer {
-  background-color: var(--social-header-transparent);
   display: grid;
   justify-content: center;
   align-content: center;
+  grid-template-columns: 25fr 25fr 25fr 25fr;
   grid-auto-flow: column;
-  gap: clamp(1rem, 1.25vw, 1.5rem);
-  border-radius: 0 0 15px 15px;
+  gap: clamp(1rem, 2vw, 3rem);
+  max-width: 1024px;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+html:not([data-scroll="0"]) .socialcolorcontainer {
+  background-color: var(--social-header-transparent);
+}
+
+html:not([data-scroll="0"]) .socialcontainer {
+  max-width: 1280px;
+}
+
+html:not([data-scroll="0"]) .socialcontainer div:not(.themechange):hover {
+  background-color: var(--social-hover);
 }
 
 .scc {
@@ -973,9 +1054,19 @@ a:hover {
 }
 
 .socialcontainer div {
-  transition-duration: 250ms;
-  margin: 1vh 0 1vh 0;
   border-radius: 1500px;
+  justify-content: center;
+  align-content: center;
+  transition-duration: 250ms;
+}
+
+.socialcontainer div.themechange {
+  margin: 1vh 0vh 1vh auto;
+  /* background-color: #073a4d; */
+}
+
+.socialcontainer div:not(.themechange) {
+  margin: 1vh auto 1vh auto;
   /* background-color: #073a4d; */
 }
 
@@ -998,7 +1089,7 @@ a:hover {
 }
 
 .arrowholder.left {
-  margin: 2vh 1vw;
+  margin: 20px 0;
   justify-content: left;
 }
 
@@ -1089,6 +1180,14 @@ noscript p {
 }
 
 @media only screen and (min-width: 640px) {
+  .socialcontainer {
+    grid-template-columns: 5fr 5fr 5fr 5fr 80fr;
+  }
+
+  .themechange {
+    display: block;
+  }
+
   h1 {
     text-align: left;
   }
@@ -1104,6 +1203,11 @@ noscript p {
   .arrowholder.dynamic {
     margin: 2vh 1vw;
     justify-content: left;
+  }
+
+  .socialcontainer div i {
+    text-align: center;
+    font-size: 30px;
   }
 }
 
@@ -1151,14 +1255,13 @@ noscript p {
     margin-left: 0px;
   }
 
-  .socialcontainer div i {
-    text-align: center;
-    font-size: 30px;
-  }
-
   /* #projects {
     margin: 0 1vw;
   } */
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 500px) {
