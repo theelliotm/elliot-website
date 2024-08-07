@@ -23,18 +23,6 @@
     <!-- stores / changes theme -->
     <script>
       var theme = "light";
-      if (
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-      ) {
-        // dark mode
-        theme = "dark";
-      }
-
-      if (sessionStorage.getItem("theme"))
-        theme = sessionStorage.getItem("theme");
-      if (theme === "dark")
-        document.documentElement.setAttribute("data-theme", "dark");
 
       function updateIcon() {
         const moon = document.getElementById("themeicon1");
@@ -48,17 +36,32 @@
         }
       }
 
-      updateIcon();
-
-      function toggleTheme() {
-        theme = theme === "dark" ? "light" : "dark";
-        sessionStorage.setItem("theme", theme);
-        document.documentElement.setAttribute(
-          "data-theme",
-          theme === "dark" ? "dark" : null
-        );
-        updateIcon();
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        // dark mode
+        theme = "dark";
       }
+
+      if (sessionStorage.getItem("theme"))
+        theme = sessionStorage.getItem("theme");
+      if (theme === "dark")
+        document.documentElement.setAttribute("data-theme", "dark");
+      
+      function toggleTheme() {
+          theme = theme === "dark" ? "light" : "dark";
+          sessionStorage.setItem("theme", theme);
+          document.documentElement.setAttribute(
+            "data-theme",
+            theme === "dark" ? "dark" : null
+          );
+          updateIcon();
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        updateIcon();
+      });
 
 
     </script>

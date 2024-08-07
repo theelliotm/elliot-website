@@ -4,11 +4,7 @@
 
 :root {
   --h1-scroll-color: darkcyan;
-  --header-color: linear-gradient(
-    135deg,
-    #073a4d 00%,
-    rgba(14, 21, 24, 1) 200%
-  );
+  --header-color: #073a4d;
   --h3-color: #0b448f;
   --p-h2-hr-color: #073a4d;
   --social-button: hsl(0, 0%, 2%);
@@ -25,11 +21,7 @@
 
 [data-theme="dark"] {
   --h1-scroll-color: rgb(9, 153, 153);
-  --header-color: linear-gradient(
-    135deg,
-    rgba(24, 45, 53, 1) 0%,
-    rgba(14, 21, 24, 1) 100%
-  );
+  --header-color: rgba(24, 45, 53, 1);
   --h3-color: #1c8cb4;
   --p-h2-hr-color: #ebebeb;
   --social-hover: #146684;
@@ -74,7 +66,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--bg-color); /* color of the tracking area */
+  background-color: inherit;
 }
 
 body::-webkit-scrollbar-thumb {
