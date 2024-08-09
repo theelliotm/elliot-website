@@ -666,14 +666,6 @@ video {
   max-width: 1280px;
 }
 
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.grid-cols-none {
-  grid-template-columns: none;
-}
-
 .overflow-clip {
   overflow: clip;
 }
@@ -1046,6 +1038,7 @@ a:hover {
   max-width: 1024px;
   transition-duration: 200ms;
   transition-timing-function: ease-out;
+  z-index: 100;
 }
 
 html:not([data-scroll="0"]) .socialcolorcontainer {
@@ -1170,11 +1163,11 @@ html:not([data-scroll="0"]) .socialcontainer div:not(.themechange):hover {
 
 .projectimage img {
   border-radius: 10px;
-  max-height: 250px;
   width: auto;
   -o-object-fit: contain;
      object-fit: contain;
   margin: auto auto;
+  max-height: 400px;
 }
 
 .certimage img {
@@ -1199,21 +1192,14 @@ noscript p {
   margin-top: 40px;
 }
 
-@media only screen and (min-width: 640px) {
-  .socialcontainer {
-    grid-template-columns: 5fr 5fr 5fr 5fr 80fr;
-  }
-
-  .themechange {
-    display: block;
-  }
-
+@media only screen and (min-width: 770px) {
   h1 {
     text-align: left;
   }
 
-  .h3 {
-    text-align: center;
+  #welcomeimage {
+    width: 300px;
+    height: auto;
   }
 
   hr.seperatorsmall {
@@ -1229,17 +1215,6 @@ noscript p {
     text-align: center;
     font-size: 30px;
   }
-}
-
-@media only screen and (min-width: 770px) {
-  h1 {
-    text-align: left;
-  }
-
-  #welcomeimage {
-    width: 300px;
-    height: auto;
-  }
 
   .projectimage img {
     height: auto;
@@ -1253,6 +1228,9 @@ noscript p {
     margin: 30px 0;
     display: grid;
     grid-auto-flow: column;
+  }
+
+  .project:not(.onlytext) {
     grid-template-columns: 2fr 1fr;
   }
 
@@ -1273,6 +1251,18 @@ noscript p {
   .welcometext {
     margin-right: 32px;
     margin-left: 0px;
+  }
+
+  .socialcontainer {
+    grid-template-columns: 5fr 5fr 5fr 5fr 80fr;
+  }
+
+  .themechange {
+    display: block;
+  }
+
+  .h3 {
+    text-align: center;
   }
 
   /* #projects {
@@ -1336,11 +1326,5 @@ noscript p {
   .lg\:px-24 {
     padding-left: 6rem;
     padding-right: 6rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }

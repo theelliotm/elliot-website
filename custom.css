@@ -286,6 +286,7 @@ a:hover {
   max-width: 1024px;
   transition-duration: 200ms;
   transition-timing-function: ease-out;
+  z-index: 100;
 }
 html:not([data-scroll="0"]) .socialcolorcontainer {
   background-color: var(--social-header-transparent);
@@ -395,7 +396,6 @@ html:not([data-scroll="0"]) .socialcontainer div:not(.themechange):hover {
   grid-template-columns: 1fr;
   gap: clamp(1rem, 1.25vw, 100rem);
 }
-
 .project div h3 {
   margin-top: 0;
 }
@@ -408,10 +408,10 @@ html:not([data-scroll="0"]) .socialcontainer div:not(.themechange):hover {
 
 .projectimage img {
   border-radius: 10px;
-  max-height: 250px;
   width: auto;
   object-fit: contain;
   margin: auto auto;
+  max-height: 400px;
 }
 
 .certimage img {
@@ -435,18 +435,13 @@ noscript p {
   margin-top: 40px;
 }
 
-@media only screen and (min-width: 640px) {
-  .socialcontainer {
-    grid-template-columns: 5fr 5fr 5fr 5fr 80fr;
-  }
-  .themechange {
-    display: block;
-  }
+@media only screen and (min-width: 770px) {
   h1 {
     text-align: left;
   }
-  .h3 {
-    text-align: center;
+  #welcomeimage {
+    width: 300px;
+    height: auto;
   }
   hr.seperatorsmall {
     visibility: hidden;
@@ -459,17 +454,6 @@ noscript p {
     text-align: center;
     font-size: 30px;
   }
-}
-
-@media only screen and (min-width: 770px) {
-  h1 {
-    text-align: left;
-  }
-  #welcomeimage {
-    width: 300px;
-    height: auto;
-  }
-
   .projectimage img {
     height: auto;
     width: 25vw;
@@ -480,6 +464,8 @@ noscript p {
     margin: 30px 0;
     display: grid;
     grid-auto-flow: column;
+  }
+  .project:not(.onlytext) {
     grid-template-columns: 2fr 1fr;
   }
   .h3 {
@@ -496,6 +482,15 @@ noscript p {
   .welcometext {
     margin-right: 32px;
     margin-left: 0px;
+  }
+  .socialcontainer {
+    grid-template-columns: 5fr 5fr 5fr 5fr 80fr;
+  }
+  .themechange {
+    display: block;
+  }
+  .h3 {
+    text-align: center;
   }
   /* #projects {
     margin: 0 1vw;
